@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.4 on win32)" generated="20200110 13:41:18.023" rpa="false">
+<suite id="s1" name="Electronapiexperiment" source="C:\Users\brownt\git\ElectronApiDemoRobot\electronapiexperiment.robot">
+<test id="s1-t1" name="Test title">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>calling create driver</arg>
+</arguments>
+<status status="PASS" starttime="20200110 13:41:18.328" endtime="20200110 13:41:18.328"></status>
+</kw>
+<kw name="Get Datetime" library="my_code">
+<assign>
+<var>${DateTime}</var>
+</assign>
+<msg timestamp="20200110 13:41:18.329" level="INFO">${DateTime} = Time Stamp-Year:2020 Month:01 Day:10 Hour:13 Min:41 Sec:18</msg>
+<status status="PASS" starttime="20200110 13:41:18.329" endtime="20200110 13:41:18.329"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${DateTime}</arg>
+</arguments>
+<status status="PASS" starttime="20200110 13:41:18.330" endtime="20200110 13:41:18.330"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20200110 13:41:18.331" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002002333BE08&gt;</msg>
+<status status="PASS" starttime="20200110 13:41:18.331" endtime="20200110 13:41:18.331"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>start-maximized</arg>
+</arguments>
+<status status="PASS" starttime="20200110 13:41:18.332" endtime="20200110 13:41:18.332"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>now getting desired capabilities</arg>
+</arguments>
+<status status="PASS" starttime="20200110 13:41:18.332" endtime="20200110 13:41:18.333"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].DesiredCapabilities()</arg>
+<arg>sys, selenium.webdriver</arg>
+</arguments>
+<assign>
+<var>${desiredCapability}</var>
+</assign>
+<msg timestamp="20200110 13:41:18.334" level="INFO">${desiredCapability} = &lt;selenium.webdriver.common.desired_capabilities.DesiredCapabilities object at 0x0000020023355E48&gt;</msg>
+<status status="PASS" starttime="20200110 13:41:18.333" endtime="20200110 13:41:18.334"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument binary</arg>
+<arg>werwer</arg>
+</arguments>
+<msg timestamp="20200110 13:41:18.335" level="FAIL">Object '&lt;selenium.webdriver.chrome.options.Options object at 0x000002002333BE08&gt;' does not have method 'add_argument binary'.</msg>
+<status status="FAIL" starttime="20200110 13:41:18.334" endtime="20200110 13:41:18.335"></status>
+</kw>
+<tags>
+<tag>DEBUG</tag>
+</tags>
+<status status="FAIL" starttime="20200110 13:41:18.327" endtime="20200110 13:41:18.335" critical="yes">Object '&lt;selenium.webdriver.chrome.options.Options object at 0x000002002333BE08&gt;' does not have method 'add_argument binary'.</status>
+</test>
+<doc>Suite description</doc>
+<status status="FAIL" starttime="20200110 13:41:18.025" endtime="20200110 13:41:18.337"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1">DEBUG</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="Electronapiexperiment">Electronapiexperiment</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
